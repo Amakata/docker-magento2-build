@@ -22,10 +22,11 @@ RUN apt-get update \
     && apt-get install -y git \
     && apt-get install -y jq \
     && apt-get install -y gosu \
+    && apt-get install -y awscli \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-RUN curl -sS https://files.magerun.net/n98-magerun.phar > /usr/local/bin/n98-magerun.phar && chmod 755 /usr/local/bin/n98-magerun.phar
+RUN curl -sS https://files.magerun.net/n98-magerun2.phar > /usr/local/bin/n98-magerun2.phar && chmod 755 /usr/local/bin/n98-magerun2.phar
 RUN curl -sS http://gordalina.github.io/cachetool/downloads/cachetool.phar > /usr/local/bin/cachetool.phar && chmod 755 /usr/local/bin/cachetool.phar
 RUN mkdir -p /var/www/magento
 RUN mkdir -p /var/www/.ssh && chown www-data.www-data /var/www/.ssh
